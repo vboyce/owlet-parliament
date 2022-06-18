@@ -3,8 +3,9 @@
 \usepackage{graphicx}
 \setlength\intextsep{0pt}
 \usepackage{enumitem}
+\usepackage{tikz}
 
-\setitemize[1]{itemsep=-5pt,topsep=0pt}
+\setitemize[1]{itemsep=-5pt, topsep=0pt}
 
 \pagestyle{empty}
 \setlength{\belowcaptionskip}{-10pt}
@@ -85,4 +86,285 @@ Cinch stitches with yarn ends, knot, and secure ends. Block if desired.
 
 \doclicenseThis
 Contact: vero.boyce@gmail.com
+
+\newpage
+
+\begin{tikzpicture}[scale=\textwidth/25cm, x=-1cm]
+  %%% BA pairs %%%
+  \foreach \x in {2, 4, ..., 16} {
+    \fill[gray] (\x, 1) rectangle ++(1, 1);
+  }
+  
+  %%% Column/row labels %%%
+  \foreach \x in {1, ..., 16} {
+    \node at (\x + 0.5, 0.5) {\x};
+  }
+  \node at (0.5, 1.5) {1};
+  
+  %%% Grid %%%
+  \draw[black] (1, 1) rectangle ++(16, 1);
+  \foreach \x in {2, ..., 16} {
+    \draw[black] (\x, 1) -- ++(0, 1);
+  }
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=\textwidth/25cm, x=-1cm]
+  %%% Null pairs %%%
+  \foreach \x in {2, 3, 10, 11, 14, 15, 22, 23} {
+    \fill[black] (\x, 1) rectangle ++(1, 2);
+  }
+  \foreach \x in {3, 10, 15, 22} {
+    \fill[black] (\x, 3) rectangle ++(1, 2);
+  }
+  
+  %%% Lifted increases %%%
+  \foreach \x/\y in {2/3, 2/5, 14/3, 14/5} {
+    \draw[black, line width=1]
+        (\x + 0.2, \y + 0.2)
+        +(0, 0.6) -- +(0, 0) -- +(0.6, 0.6);
+  }
+  \foreach \x/\y in {11/3, 11/5, 23/3, 23/5} {
+    \draw[black, line width=1]
+        (\x + 0.2, \y + 0.2)
+        +(0.6, 0.6) -- +(0.6, 0) -- +(0, 0.6);
+  }
+  
+  %%% Column/row labels %%%
+  \foreach \x in {1, ..., 24} {
+    \node at (\x + 0.5, 0.5) {\x};
+  }
+  \foreach \y in {1, ..., 5} {
+    \node at (0.5, \y + 0.5) {\y};
+  }
+  
+  %%% Grid %%%
+  \draw[black] (1, 1) rectangle ++(24, 5);
+  \foreach \x in {2, ..., 24} {
+    \draw[black] (\x, 1) -- ++(0, 5);
+  }
+  \foreach \y in {2, ..., 5} {
+    \draw[black] (1, \y) -- ++(24, 0);
+  }
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=\textwidth/25cm, x=-1cm]
+  %%% BA pairs %%%
+  \fill[gray] (4, 1) rectangle ++(5, 3);
+  \fill[gray] (17, 1) rectangle ++(5, 3);
+  
+  \fill[gray] (4, 4) rectangle ++(18, 4);
+  
+  \fill[gray] (4, 8) rectangle ++(5, 8);
+  \fill[gray] (17, 8) rectangle ++(5, 8);
+  
+  \fill[gray] (4, 16) rectangle ++(18, 5);
+  
+  \fill[gray] (4, 21) rectangle ++(7, 3);
+  \fill[gray] (12, 21) rectangle ++(2, 3);
+  \fill[gray] (15, 21) rectangle ++(7, 3);
+  
+  \fill[gray] (4, 24) rectangle ++(18, 2);
+  \fill[gray] (8, 26) rectangle ++(10, 1);
+  
+  \fill[gray] (4, 28) rectangle ++(5, 1);
+  \fill[gray] (17, 28) rectangle ++(5, 1);
+  
+  \foreach \x in {9, ..., 16} {
+    \foreach \y [var=\sum, evaluate=\sum using \x + \y] in {8, ..., 15} {
+      \ifodd\sum
+        \fill[gray] (\x, \y) rectangle ++(1, 1);
+      \fi
+    }
+  }
+  
+  %%% Nupps %%%
+  \node at (11.5, 22.5) {N9};
+  \node at (14.5, 22.5) {N9};
+  \draw[black, line width=1]
+      (11, 23)
+      +(0.5, 0.2) -- +(0.7, 0.5) -- +(0.5, 0.8) -- +(0.3, 0.5) -- cycle
+      (14, 23)
+      +(0.5, 0.2) -- +(0.7, 0.5) -- +(0.5, 0.8) -- +(0.3, 0.5) -- cycle;
+  
+  %%% Column/row labels %%%
+  \foreach \x in {1, ..., 24} {
+    \node at (\x + 0.5, 0.5) {\x};
+  }
+  \foreach \y in {1, ..., 28} {
+    \node at (0.5, \y + 0.5) {\y};
+  }
+  
+  %%% Grid %%%
+  \draw[black] (1, 1) rectangle ++(24, 28);
+  \foreach \x in {2, ..., 24} {
+    \draw[black] (\x, 1) -- ++(0, 28);
+  }
+  \foreach \y in {2, ..., 28} {
+    \draw[black] (1, \y) -- ++(24, 0);
+  }
+  
+  %%% Cables %%%
+  \foreach \y/\c in {7/gray, 20/gray, 27/white} {
+    \fill[gray, draw=black]
+        (13, \y) -- ++(-4, 1) -- ++(-5, 0) -- ++(4, -1) -- cycle
+        (13, \y) -- ++(4, 1) -- ++(5, 0) -- ++(-4, -1) -- cycle;
+    \foreach \x
+        [var=\sign, evaluate=\sign using 2*floor(\x/13) - 1]
+        in {9, ..., 12, 14, 15, 16, 17} {
+      \draw[black] (\x, \y) -- ++(4 * \sign, 1);
+    }
+  }
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=\textwidth/25cm, x=-1cm]
+  %%% BA pairs %%%
+  \fill[gray] % Sorry for the unreadability of this. 😕
+      (3, 5)
+      -- ++(1, 0) -- ++(0, 1) -- ++(1, 0) -- ++(0, 1)
+      -- ++(2, 0) -- ++(0, 1) -- ++(1, 0) -- ++(0, 1)
+      -- ++(2, 0) -- ++(0, 1) -- ++(1, 0) -- ++(0, 1) -- ++(2, 0) -- ++(0, -1) -- ++(1, 0) -- ++(0, -1) -- ++(2, 0)
+      -- ++(0, -1) -- ++(1, 0) -- ++(0, -1) -- ++(2, 0)
+      -- ++(0, -1) -- ++(1, 0) -- ++(0, -1) -- ++(1, 0)
+      -- ++(0, 2) -- ++(-2, 0)
+      -- ++(0, 1) -- ++(-1, 0) -- ++(0, 1) -- ++(-2, 0)
+      -- ++(0, 1) -- ++(-1, 0) -- ++(0, 1) -- ++(-1, 0) -- ++(0, 1) -- ++(-1, 0) -- ++(0, 1) -- ++(-2, 0) -- ++(0, -1) -- ++(-1, 0) -- ++(0, -1) -- ++(-1, 0) -- ++(0, -1) -- ++(-1, 0) -- ++(0, -1)
+      -- ++(-2, 0) -- ++(0, -1) -- ++(-1, 0) -- ++(0, -1)
+      -- ++(-2, 0) -- ++(0, -2)
+      
+      (6, 11)
+      -- ++(1, 0) -- ++(0, 1) -- ++(1, 0) -- ++(0, 1)
+      -- ++(2, 0) -- ++(0, 1) -- ++(1, 0) -- ++(0, 1) -- ++(2, 0) -- ++(0, -1) -- ++(1, 0) -- ++(0, -1) -- ++(2, 0)
+      -- ++(0, -1) -- ++(1, 0) -- ++(0, -1) -- ++(1, 0)
+      -- ++(0, 2) -- ++(-2, 0)
+      -- ++(0, 1) -- ++(-1, 0) -- ++(0, 1) -- ++(-1, 0) -- ++(0, 1) -- ++(-1, 0) -- ++(0, 1) -- ++(-2, 0) -- ++(0, -1) -- ++(-1, 0) -- ++(0, -1) -- ++(-1, 0) -- ++(0, -1) -- ++(-1, 0) -- ++(0, -1)
+      -- ++(-2, 0) -- ++(0, -2);
+  
+  %%% Decreases %%%
+  \foreach \y in {1, 3, ..., 19} {
+    \draw[black, line width=1] (10 + 0.8, \y + 0.2) -- ++(-0.6, 0.6);
+  }
+  \foreach \y in {1, 3, ..., 19} {
+    \draw[black, line width=1] (13 + 0.2, \y + 0.2) -- ++(0.6, 0.6);
+  }
+  \draw[black, line width=1] (11.8, 21.2) -- ++(-0.6, 0.6);
+  \draw[black, line width=1] (12.2, 21.2) -- ++(0.6, 0.6);
+  \draw[black, line width=1] (12.2, 23.2) -- ++(0.6, 0.6);
+  
+  %%% Column/row labels %%%
+  \foreach \x in {1, ..., 22} {
+    \node at (\x + 0.5, 0.5) {\x};
+  }
+  \foreach \y
+      [var=\shift, evaluate=\shift using floor((\y - 1)/2)]
+      in {1, ..., 23} {
+    \node at (0.5 + \shift, \y + 0.5) {\y};
+  }
+  
+  %%% Grid %%%
+  \foreach \x in {1, ..., 11} {
+    \draw[black] (\x, 1) -- (\x, \x + \x + 1);
+  }
+  \draw[black] (12, 1) -- (12, 24);
+  \draw[black] (13, 1) -- (13, 24);
+  \foreach \x in {14, ..., 23} {
+    \draw[black] (\x, 1) -- (\x, 49 - \x - \x);
+  }
+  
+  \draw[black] (1, 1) -- (23, 1);
+  \foreach \y [var=\shift, evaluate=\shift using \y/2 - 1] in {2, 4, ..., 23} {
+    \draw[black] (1 + \shift, \y) -- (23 - \shift, \y);
+    \draw[black] (1 + \shift, \y + 1) -- (23 - \shift, \y + 1);
+  }
+  \draw[black] (12, 24) -- (13, 24);
+\end{tikzpicture}
+
+Lorem ipsum dolor sit amet, consectetur
+\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+  \draw[black] (0, 0) rectangle (1, 1);
+\end{tikzpicture}
+adipiscing elit. Nullam ornare vitae tortor
+\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+  \draw[black, fill=gray] (0, 0) rectangle (1, 1);
+\end{tikzpicture}
+quis venenatis. Etiam feugiat dolor molestie
+\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+  \draw[black, fill=black] (0, 0) rectangle (1, 1);
+\end{tikzpicture}
+pellentesque scelerisque. In mattis viverra nibh, vel
+\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+  \draw[black] (0, 0) rectangle (1, 1);
+  \draw[black, line width=1] (0.2, 0.8) -- (0.8, 0.2);
+\end{tikzpicture}
+tincidunt ipsum pulvinar eget. In at gravida nisi, et
+\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+  \draw[black] (0, 0) rectangle (1, 1);
+  \draw[black, line width=1] (0.8, 0.8) -- (0.2, 0.2);
+\end{tikzpicture}
+sollicitudin orci. Vivamus nec lorem blandit odio luctus
+\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+  \draw[black] (0, 0) rectangle (1, 1);
+  \draw[black, line width=1] (0.2, 0.8) -- (0.8, 0.2) -- (0.8, 0.8);
+\end{tikzpicture}
+tempus. In malesuada fringilla consequat. Vivamus
+\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+  \draw[black] (0, 0) rectangle (1, 1);
+  \draw[black, line width=1] (0.8, 0.8) -- (0.2, 0.2) -- (0.2, 0.8);
+\end{tikzpicture}
+libero dui, mollis at lacus dapibus, bibendum
+\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+  \draw[black] (0, 0) rectangle (1, 1);
+  \node at (0.5, 0.5) {\tiny N9};
+\end{tikzpicture}
+sodales enim. Vivamus pharetra quam eget ex tempus,
+\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+  \draw[black] (0, 0) rectangle (1, 1);
+  \draw[black, line width=1] (0.5, 0.2) -- (0.7, 0.5) -- (0.5, 0.8) -- (0.3, 0.5) -- cycle;
+\end{tikzpicture}
+eu dapibus est congue. Maecenas varius lacus non erat
+\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+  \draw[black] (0, 0) rectangle (9, 1);
+  \foreach \x in {1, ..., 8} {
+    \draw[black] (\x, 0) -- (\x, 1);
+  }
+  \fill[gray, draw=black]
+      (9, 0) -- ++(-4, 1) -- ++(-5, 0) -- ++(4, -1) -- cycle;
+  \foreach \x in {5, ..., 8} {
+    \draw[black] (\x, 0) -- ++(-4, 1);
+  }
+\end{tikzpicture}
+dictum rutrum. Pellentesque sed libero arcu. Duis commodo dui et dui semper imperdiet. Duis efficitur mi non erat fermentum pellentesque at a augue.
+\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+  \draw[black, fill=gray] (0, 0) rectangle (9, 1);
+  \foreach \x in {1, ..., 8} {
+    \draw[black] (\x, 0) -- (\x, 1);
+  }
+  \fill[gray, draw=black]
+      (9, 0) -- ++(-4, 1) -- ++(-5, 0) -- ++(4, -1) -- cycle;
+  \foreach \x in {5, ..., 8} {
+    \draw[black] (\x, 0) -- ++(-4, 1);
+  }
+\end{tikzpicture}
+\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+  \draw[black] (0, 0) rectangle (9, 1);
+  \foreach \x in {1, ..., 8} {
+    \draw[black] (\x, 0) -- (\x, 1);
+  }
+  \fill[gray, draw=black]
+      (9, 1) -- ++(-4, -1) -- ++(-5, 0) -- ++(4, 1) -- cycle;
+  \foreach \x in {5, ..., 8} {
+    \draw[black] (\x, 1) -- ++(-4, -1);
+  }
+\end{tikzpicture}
+\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+  \draw[black, fill=gray] (0, 0) rectangle (9, 1);
+  \foreach \x in {1, ..., 8} {
+    \draw[black] (\x, 0) -- (\x, 1);
+  }
+  \fill[gray, draw=black]
+      (9, 1) -- ++(-4, -1) -- ++(-5, 0) -- ++(4, 1) -- cycle;
+  \foreach \x in {5, ..., 8} {
+    \draw[black] (\x, 1) -- ++(-4, -1);
+  }
+\end{tikzpicture}
+
 \end{document}
