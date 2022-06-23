@@ -12,6 +12,7 @@
 
 \usepackage{graphicx}
 \usepackage{hyperref}
+\usepackage{caption}
 \usepackage[
 type={CC},
 modifier={by},
@@ -56,7 +57,7 @@ A double knit hat in fingering yarn with 6 owls on the side and a flower shape o
 \end{itemize}
 
 \smallskip
-\textbf{Sizing:} As shown, the pattern is repeated 6 times, for a finished diameter of AA and height of BB, to fit a QQ diameter head. To resize, you could work fewer/more repeats of the pattern, and/or adjust the spacing between owls. If you adjust spacing between owls, you will need to modify the increases in chart B and the decreases at the beginning of chart D. I recommend doing chart A over 2/3 the number of stitches used in Chart C. 
+\textbf{Sizing:} As shown, the pattern is repeated 6 times, for a finished unstretched circumference of 21 in and height of 8.5 in, to fit a 23 in circumference head. To resize, you could work fewer/more repeats of the pattern, and/or adjust the spacing between owls. If you adjust spacing between owls, you will need to modify the increases in chart B and the decreases at the beginning of chart D. I recommend doing chart A over 2/3 the number of stitches used in Chart C. 
 
 \smallskip
 \textbf{Swatching:} I recommend working one copy of chart C (plus stockinette border) flat as coaster to get familiar with the owl technique and check sizing. 
@@ -84,12 +85,13 @@ Work Chart D six times around (6 pairs).
 Cinch stitches with yarn ends, knot, and secure ends. Block if desired. 
 
 
-\doclicenseThis
-Contact: vero.boyce@gmail.com
+\doclicenseThis Chart typesetting by Pi Fisher. Contact: vero.boyce@gmail.com
 
 \newpage
 
-\begin{tikzpicture}[scale=\textwidth/25cm, x=-1cm]
+\begin{figure}
+	\centering
+\begin{tikzpicture}[scale=\textwidth/35cm, x=-1cm]
   %%% BA pairs %%%
   \foreach \x in {2, 4, ..., 16} {
     \fill[gray] (\x, 1) rectangle ++(1, 1);
@@ -106,9 +108,16 @@ Contact: vero.boyce@gmail.com
   \foreach \x in {2, ..., 16} {
     \draw[black] (\x, 1) -- ++(0, 1);
   }
-\end{tikzpicture}
+\end{tikzpicture} 
+\caption*{\textbf{Chart A} Repeat 6 times around for 15 rows.\\}
 
-\begin{tikzpicture}[scale=\textwidth/25cm, x=-1cm]
+\end{figure}
+
+
+\begin{figure}
+	\centering
+
+\begin{tikzpicture}[scale=\textwidth/35cm, x=-1cm]
   %%% Null pairs %%%
   \foreach \x in {2, 3, 10, 11, 14, 15, 22, 23} {
     \fill[black] (\x, 1) rectangle ++(1, 2);
@@ -146,8 +155,13 @@ Contact: vero.boyce@gmail.com
     \draw[black] (1, \y) -- ++(24, 0);
   }
 \end{tikzpicture}
+\caption*{\textbf{Chart B} Repeat 6 times around.}
+\end{figure}
 
-\begin{tikzpicture}[scale=\textwidth/25cm, x=-1cm]
+\begin{figure}
+	\centering
+
+\begin{tikzpicture}[scale=\textwidth/35cm, x=-1cm]
   %%% BA pairs %%%
   \fill[gray] (4, 1) rectangle ++(5, 3);
   \fill[gray] (17, 1) rectangle ++(5, 3);
@@ -215,8 +229,14 @@ Contact: vero.boyce@gmail.com
     }
   }
 \end{tikzpicture}
+\caption*{\textbf{Chart C} Repeat 6 times around.}
+\end{figure}
 
-\begin{tikzpicture}[scale=\textwidth/25cm, x=-1cm]
+\begin{figure}
+	\centering
+
+
+\begin{tikzpicture}[scale=\textwidth/35cm, x=-1cm]
   %%% BA pairs %%%
   \fill[gray] % Sorry for the unreadability of this. 😕
       (3, 5)
@@ -277,50 +297,64 @@ Contact: vero.boyce@gmail.com
   }
   \draw[black] (12, 24) -- (13, 24);
 \end{tikzpicture}
+\caption*{\textbf{Chart D} Repeat 6 times around.}
+\end{figure}
 
-Lorem ipsum dolor sit amet, consectetur
+\begin{figure}
 \begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+
   \draw[black] (0, 0) rectangle (1, 1);
 \end{tikzpicture}
-adipiscing elit. Nullam ornare vitae tortor
+Knit color A, purl color B.
+
+
 \begin{tikzpicture}[scale=1em/1cm, x=-1cm]
   \draw[black, fill=gray] (0, 0) rectangle (1, 1);
 \end{tikzpicture}
-quis venenatis. Etiam feugiat dolor molestie
+Knit color B, purl color A.
+
+
 \begin{tikzpicture}[scale=1em/1cm, x=-1cm]
   \draw[black, fill=black] (0, 0) rectangle (1, 1);
 \end{tikzpicture}
-pellentesque scelerisque. In mattis viverra nibh, vel
+No pair
+
 \begin{tikzpicture}[scale=1em/1cm, x=-1cm]
   \draw[black] (0, 0) rectangle (1, 1);
   \draw[black, line width=1] (0.2, 0.8) -- (0.8, 0.2);
 \end{tikzpicture}
-tincidunt ipsum pulvinar eget. In at gravida nisi, et
+Right leaning decrease: K2tog in shown color, SSP in other color. 
+
 \begin{tikzpicture}[scale=1em/1cm, x=-1cm]
   \draw[black] (0, 0) rectangle (1, 1);
   \draw[black, line width=1] (0.8, 0.8) -- (0.2, 0.2);
 \end{tikzpicture}
-sollicitudin orci. Vivamus nec lorem blandit odio luctus
+Left leaning decrease: SSK in shown color, P2tog in other color. 
+
 \begin{tikzpicture}[scale=1em/1cm, x=-1cm]
   \draw[black] (0, 0) rectangle (1, 1);
   \draw[black, line width=1] (0.2, 0.8) -- (0.8, 0.2) -- (0.8, 0.8);
 \end{tikzpicture}
-tempus. In malesuada fringilla consequat. Vivamus
+Right lifted increase: into pair 1 below next stitch on left needle, K1tbl in color A into front stitch, and purl in color B into back stitch. 
+
 \begin{tikzpicture}[scale=1em/1cm, x=-1cm]
   \draw[black] (0, 0) rectangle (1, 1);
   \draw[black, line width=1] (0.8, 0.8) -- (0.2, 0.2) -- (0.2, 0.8);
 \end{tikzpicture}
-libero dui, mollis at lacus dapibus, bibendum
+Left lifted increase: into pair 2 below first stitch on right needle, knit in color A into front stitch, and P1tbl in color B into back stitch. 
+
 \begin{tikzpicture}[scale=1em/1cm, x=-1cm]
   \draw[black] (0, 0) rectangle (1, 1);
   \node at (0.5, 0.5) {\tiny N9};
 \end{tikzpicture}
-sodales enim. Vivamus pharetra quam eget ex tempus,
+Nupp: In color A work (K1, yo, K1, yo, K1, yo, K1, yo, K1) into next stitch (9 stitches created), in color B work (P1, yo, P1, yo, P1, yo, P1, yo, P1) into next stitch (9 stitches created). Work these very loosely, i.e. over working needle held double with spare smaller needle. 
+
 \begin{tikzpicture}[scale=1em/1cm, x=-1cm]
   \draw[black] (0, 0) rectangle (1, 1);
   \draw[black, line width=1] (0.5, 0.2) -- (0.7, 0.5) -- (0.5, 0.8) -- (0.3, 0.5) -- cycle;
 \end{tikzpicture}
-eu dapibus est congue. Maecenas varius lacus non erat
+Close nupp: In color A, K9tog, in color B, P9tog. 
+
 \begin{tikzpicture}[scale=1em/1cm, x=-1cm]
   \draw[black] (0, 0) rectangle (9, 1);
   \foreach \x in {1, ..., 8} {
@@ -332,18 +366,19 @@ eu dapibus est congue. Maecenas varius lacus non erat
     \draw[black] (\x, 0) -- ++(-4, 1);
   }
 \end{tikzpicture}
-dictum rutrum. Pellentesque sed libero arcu. Duis commodo dui et dui semper imperdiet. Duis efficitur mi non erat fermentum pellentesque at a augue.
-\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
-  \draw[black, fill=gray] (0, 0) rectangle (9, 1);
-  \foreach \x in {1, ..., 8} {
-    \draw[black] (\x, 0) -- (\x, 1);
-  }
-  \fill[gray, draw=black]
-      (9, 0) -- ++(-4, 1) -- ++(-5, 0) -- ++(4, -1) -- cycle;
-  \foreach \x in {5, ..., 8} {
-    \draw[black] (\x, 0) -- ++(-4, 1);
-  }
-\end{tikzpicture}
+Right leaning cable: Slip 4 pairs to cable needle. Holding cable needle to inside of work, slip 5 pairs to right needle. Slip pairs from cable needle back to left needle, slip pairs from right needle back to left needle. Work pairs in shown colors (knit shown color, purl other color). 
+
+%\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+%  \draw[black, fill=gray] (0, 0) rectangle (9, 1);
+%  \foreach \x in {1, ..., 8} {
+%    \draw[black] (\x, 0) -- (\x, 1);
+%  }
+%  \fill[gray, draw=black]
+%      (9, 0) -- ++(-4, 1) -- ++(-5, 0) -- ++(4, -1) -- cycle;
+%  \foreach \x in {5, ..., 8} {
+%    \draw[black] (\x, 0) -- ++(-4, 1);
+%  }
+%\end{tikzpicture}
 \begin{tikzpicture}[scale=1em/1cm, x=-1cm]
   \draw[black] (0, 0) rectangle (9, 1);
   \foreach \x in {1, ..., 8} {
@@ -355,16 +390,18 @@ dictum rutrum. Pellentesque sed libero arcu. Duis commodo dui et dui semper impe
     \draw[black] (\x, 1) -- ++(-4, -1);
   }
 \end{tikzpicture}
-\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
-  \draw[black, fill=gray] (0, 0) rectangle (9, 1);
-  \foreach \x in {1, ..., 8} {
-    \draw[black] (\x, 0) -- (\x, 1);
-  }
-  \fill[gray, draw=black]
-      (9, 1) -- ++(-4, -1) -- ++(-5, 0) -- ++(4, 1) -- cycle;
-  \foreach \x in {5, ..., 8} {
-    \draw[black] (\x, 1) -- ++(-4, -1);
-  }
-\end{tikzpicture}
+Left leaning cable: Slip 5 pairs to right needle. Slip 4 pairs to cable needle. Holding cable needle to inside of work, slip the 5 pairs back to left needle. Slip pairs from cable needle back to left needle,  Work pairs in shown colors (knit shown color, purl other color). 
+%\begin{tikzpicture}[scale=1em/1cm, x=-1cm]
+%  \draw[black, fill=gray] (0, 0) rectangle (9, 1);
+%  \foreach \x in {1, ..., 8} {
+%    \draw[black] (\x, 0) -- (\x, 1);
+%  }
+%  \fill[gray, draw=black]
+%      (9, 1) -- ++(-4, -1) -- ++(-5, 0) -- ++(4, 1) -- cycle;
+%  \foreach \x in {5, ..., 8} {
+%    \draw[black] (\x, 1) -- ++(-4, -1);
+%  }
+%\end{tikzpicture}
+\end{figure}
 
 \end{document}
